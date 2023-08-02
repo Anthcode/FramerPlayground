@@ -1,22 +1,23 @@
 * {
-  margin:0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-#root {
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 20px;
+  font-size: 0.8em;
+  border: none;
+}
+.app {
+  background-color: rgb(101, 162, 219);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
-}
-
-button {
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  margin: 20px;
-  font-size: .8em;
 }

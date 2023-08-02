@@ -10,7 +10,11 @@ export default function App() {
     stiffness: 260,
   };
   return (
-    <div>
+    <motion.div
+      className="app"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       <motion.div initial={{ y: -450 }} transition={spring} animate={{ y: 0 }}>
         WELCOME !!!
       </motion.div>
@@ -42,6 +46,6 @@ export default function App() {
       >
         button2
       </motion.button>
-    </div>
+    </motion.div>
   );
 }
