@@ -27,7 +27,7 @@ button {
   background-color: rgb(101, 162, 219);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
@@ -35,7 +35,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-
+  font-size: 2em;
   margin: 20px;
 }
 p {

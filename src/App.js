@@ -21,9 +21,9 @@ export default function App() {
           return (
             <motion.p
               key={idx}
-              initial={{ x: '100vw', opacity: 0, scale:0}}
-              animate={{ x: 0, opacity: 1, scale:1 }}
-              transition={(spring, { duration: (idx)*0.2 })}
+              initial={{ x: '100vw', opacity: 0, scale: 0 }}
+              animate={{ x: 0, opacity: 1, scale: 1 }}
+              transition={{ duration: idx * 0.2 }}
             >
               {letter}
             </motion.p>
