@@ -6,26 +6,21 @@ import './style.css';
 export default function App() {
   const spring = {
     type: 'spring',
-    damping: 9,
-    stiffness: 150,
+    damping: 10,
+    stiffness: 120,
   };
   return (
-    <>
+    <div>
       <motion.div
-        initial={{ y: -250 }}
-        transition={spring}
-        animate={{
-          scale: 1.1,
-          x: 0,
-          y: 0,
-        }}
-      >
+       initial={{ y: -450 }} 
+       transition={spring} 
+       animate={{ y: 0 }}>
         WELCOME !!!
       </motion.div>
 
       <motion.button
-        initial={{ x: -300 }}
-        animate={{ x: 0, y: 0 }}
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
         transition={spring}
         whileHover={{
           scale: 1.05,
@@ -36,6 +31,6 @@ export default function App() {
       >
         button
       </motion.button>
-    </>
+    </div>
   );
 }
