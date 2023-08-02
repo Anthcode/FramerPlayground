@@ -4,25 +4,39 @@ import { motion, useAnimate } from 'framer-motion';
 import './style.css';
 
 export default function App() {
+  const txt = 'RANDOM TEXT';
+
+  const tabTxt = txt.split('');
+  console.log(tabTxt);
+
   const spring = {
     type: 'spring',
     damping: 10,
     stiffness: 260,
   };
   return (
-    <motion.div
-      className="app"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <div className="app">
+      <div className="text-fly">
+        {tabTxt.map((letter, idx) => {
+          return (
+            <motion.p
+              key={idx}
+              initial={{ x: '100vw', opacity: 0, scale:0}}
+              animate={{ x: 0, opacity: 1, scale:1 }}
+              transition={(spring, { duration: (idx)*0.2 })}
+            >
+              {letter}
+            </motion.p>
+          );
+        })}
+      </div>
       <motion.div initial={{ y: -450 }} transition={spring} animate={{ y: 0 }}>
         WELCOME !!!
       </motion.div>
-
       <motion.button
         initial={{ x: '-100vw', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={(spring, { delay: 0.4 })}
+        transition={(spring, { duration: 1 })}
         whileHover={{
           scale: 1.05,
         }}
@@ -36,7 +50,7 @@ export default function App() {
       <motion.button
         initial={{ x: '100vw', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={(spring, { delay: 0.6 })}
+        transition={(spring, { duration: 1 })}
         whileHover={{
           scale: 1.05,
         }}
@@ -46,6 +60,6 @@ export default function App() {
       >
         button2
       </motion.button>
-    </motion.div>
+    </div>
   );
 }
