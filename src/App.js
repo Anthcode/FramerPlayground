@@ -7,21 +7,18 @@ export default function App() {
   const spring = {
     type: 'spring',
     damping: 10,
-    stiffness: 120,
+    stiffness: 260,
   };
   return (
     <div>
-      <motion.div
-       initial={{ y: -450 }} 
-       transition={spring} 
-       animate={{ y: 0 }}>
+      <motion.div initial={{ y: -450 }} transition={spring} animate={{ y: 0 }}>
         WELCOME !!!
       </motion.div>
 
       <motion.button
-        initial={{ x: '-100vw', opacity:0 }}
-        animate={{ x: 0 , opacity: 1}}
-        transition={spring}
+        initial={{ x: '-100vw', opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={(spring, { delay: 0.4 })}
         whileHover={{
           scale: 1.05,
         }}
@@ -33,9 +30,9 @@ export default function App() {
       </motion.button>
       <div></div>
       <motion.button
-        initial={{ x: '100vw', opacity:0 }}
-        animate={{ x: 0 , opacity: 1}}
-        transition={spring}
+        initial={{ x: '100vw', opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={(spring, { delay: 0.6 })}
         whileHover={{
           scale: 1.05,
         }}
