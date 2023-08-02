@@ -19,8 +19,8 @@ export default function App() {
       </motion.div>
 
       <motion.button
-        initial={{ x: '-100vw' }}
-        animate={{ x: 0 }}
+        initial={{ x: '-100vw', opacity:0 }}
+        animate={{ x: 0 , opacity: 1}}
         transition={spring}
         whileHover={{
           scale: 1.05,
@@ -29,7 +29,21 @@ export default function App() {
           scale: 0.8,
         }}
       >
-        button
+        button1
+      </motion.button>
+      <div></div>
+      <motion.button
+        initial={{ x: '100vw', opacity:0 }}
+        animate={{ x: 0 , opacity: 1}}
+        transition={spring}
+        whileHover={{
+          scale: 1.05,
+        }}
+        whileTap={{
+          scale: 0.8,
+        }}
+      >
+        button2
       </motion.button>
     </div>
   );
