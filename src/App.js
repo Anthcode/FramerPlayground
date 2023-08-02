@@ -1,40 +1,41 @@
-import React from "react";
-import {motion, useAnimate} from 'framer-motion'
+import React from 'react';
+import { motion, useAnimate } from 'framer-motion';
 
-import "./style.css";
+import './style.css';
 
 export default function App() {
-
   const spring = {
-    type: "spring",
-    mass: 2.5,
-    damping: 18,
-    stiffness: 100
-  }
+    type: 'spring',
+    damping: 9,
+    stiffness: 150,
+  };
   return (
     <>
-      <motion.div 
-      transition={spring}
-      animate={{
-      scale: 1.1,
-      x:[300], y:[0,200] }} 
-      >
-     WELCOME !!!
-      </motion.div>
-      <motion.button
-      
-        animate={{ x: 200 ,y:250 }}
-        whileHover={{
+      <motion.div
+        initial={{ y: -250 }}
+        transition={spring}
+        animate={{
           scale: 1.1,
-          transition: { duration: .1 },
+          x: 0,
+          y: 0,
         }}
-        whileTap={{ 
-       
-          x:[120,150,200],
-          transition: spring } }
-      
-      
-      >button</motion.button>
-      </>
+      >
+        WELCOME !!!
+      </motion.div>
+
+      <motion.button
+        initial={{ x: -300 }}
+        animate={{ x: 0, y: 0 }}
+        transition={spring}
+        whileHover={{
+          scale: 1.05,
+        }}
+        whileTap={{
+          scale: 0.8,
+        }}
+      >
+        button
+      </motion.button>
+    </>
   );
 }
